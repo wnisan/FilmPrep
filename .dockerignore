@@ -1,0 +1,13 @@
+**/node_modules
+**/.env
+**/.env.local
+**/dist
+**/coverage
+**/*.log
+.git
+.idea
+.vscode
+client
+docs
+server/uploads
+server/tests

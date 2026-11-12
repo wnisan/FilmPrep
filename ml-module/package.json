@@ -1,0 +1,11 @@
+{
+  "name": "filmprep-ml-module",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Subtitle NLP pipeline for FilmPrep (rule-based MVP)",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  }
+}

@@ -1,0 +1,584 @@
+/* —— Lexicon —— */
+.lex-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 0 0.9rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.lex-progress strong {
+  color: var(--accent);
+}
+
+.lex-progress__bar {
+  flex: 1;
+  max-width: 260px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(232, 238, 248, 0.08);
+  overflow: hidden;
+}
+
+.lex-progress__bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #c98a3d, var(--accent));
+  transition: width 0.3s ease;
+}
+
+.lex-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(18, 28, 47, 0.45);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.lex-item.is-learned {
+  border-color: rgba(110, 200, 140, 0.3);
+  background: rgba(40, 80, 60, 0.18);
+}
+
+.lex-check {
+  display: grid;
+  place-items: center;
+  width: 1.45rem;
+  height: 1.45rem;
+  margin-top: 0.1rem;
+  padding: 0;
+  border: 2px solid rgba(232, 238, 248, 0.25);
+  border-radius: 7px;
+  background: rgba(11, 18, 32, 0.6);
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+.lex-check svg {
+  fill: none;
+  stroke: #0b1a10;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  transition: stroke-dashoffset 0.25s ease;
+}
+
+.lex-check:hover {
+  border-color: var(--accent);
+  transform: scale(1.06);
+}
+
+.lex-check[aria-checked='true'] {
+  border-color: #6ec88c;
+  background: #6ec88c;
+}
+
+.lex-check[aria-checked='true'] svg {
+  stroke-dashoffset: 0;
+}
+
+.lex-item__body {
+  min-width: 0;
+}
+
+.lex-item__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.6rem;
+}
+
+.lex-item__word {
+  font-size: 1.08rem;
+}
+
+.lex-item.is-learned .lex-item__word {
+  color: #9fdcb3;
+}
+
+.lex-item__def {
+  color: var(--text-muted);
+}
+
+.lex-item .materials__example {
+  margin-top: 0.35rem;
+}
+
+.lex-item .say {
+  margin-top: 0;
+}
+
+.level-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid rgba(232, 184, 109, 0.4);
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* —— My grammar rules —— */
+.my-rules {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.my-rule {
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid rgba(110, 200, 140, 0.55);
+  border-radius: var(--radius);
+  background: rgba(18, 28, 47, 0.5);
+}
+
+.my-rule__head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.my-rule__head strong {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+.my-rule__explain {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.my-rule .materials__example,
+.my-rule .dict-row__film {
+  margin: 0;
+}
+
+.gram-formula--sm {
+  padding: 0.45rem 0.55rem;
+  font-size: 0.85rem;
+}
+
+/* —— Phrases —— */
+.phrase-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 0.9rem 1rem 0.9rem 1.1rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid rgba(232, 184, 109, 0.55);
+  border-radius: var(--radius);
+  background: rgba(18, 28, 47, 0.45);
+}
+
+.phrase-item__text {
+  min-width: 0;
+}
+
+.phrase-item__original {
+  margin: 0;
+  font-size: 1.04rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.phrase-item__translation {
+  margin: 0.25rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.phrase-item__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+.phrase-item__actions .say {
+  margin-top: 0;
+}
+
+/* —— Grammar —— */
+.gram-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gram-card {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background:
+    linear-gradient(160deg, rgba(232, 184, 109, 0.07), transparent 40%),
+    rgba(18, 28, 47, 0.55);
+}
+
+.gram-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.gram-card.is-learned {
+  border-color: rgba(110, 200, 140, 0.35);
+}
+
+.gram-card__head .level-badge {
+  margin-right: auto;
+}
+
+.gram-learn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  height: 2rem;
+  padding: 0 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(11, 18, 32, 0.6);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.gram-learn svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gram-learn:hover {
+  border-color: rgba(232, 184, 109, 0.5);
+  color: var(--accent);
+}
+
+.gram-learn.is-on {
+  border-color: rgba(110, 200, 140, 0.5);
+  background: rgba(110, 200, 140, 0.14);
+  color: #8fe3a9;
+}
+
+.gram-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.gram-toolbar .lex-progress {
+  flex: 1;
+  margin: 0;
+}
+
+.gram-toolbar__mine {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.gram-quiz__kind {
+  justify-self: start;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.gram-quiz__prompt {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.gram-quiz__quote {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0.7rem 0.9rem;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  background: rgba(11, 18, 32, 0.5);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.gram-quiz__quote small {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-style: normal;
+}
+
+.gram-quiz__quote--gap {
+  display: block;
+  font-size: 1.15rem;
+  font-style: normal;
+  line-height: 1.8;
+}
+
+.gram-quiz__quote--gap small {
+  display: block;
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+.gram-gap {
+  display: inline-block;
+  min-width: 4.5rem;
+  margin: 0 0.15rem;
+  padding: 0 0.45rem;
+  border-bottom: 2px dashed var(--accent);
+  border-radius: 6px 6px 0 0;
+  background: rgba(255, 255, 255, 0.04);
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.gram-gap.is-ok {
+  border-bottom-style: solid;
+  border-color: #4cc38a;
+  background: rgba(76, 195, 138, 0.14);
+  color: #8fe3b8;
+}
+
+.gram-gap.is-bad {
+  border-bottom-style: solid;
+  border-color: #4cc38a;
+  background: rgba(229, 92, 92, 0.12);
+  color: #8fe3b8;
+}
+
+.my-rules__bar {
+  justify-content: space-between;
+}
+
+.gram-quiz__explain {
+  margin: 0;
+}
+
+.gram-quiz__weak {
+  margin: 0;
+  color: #ffb36b;
+}
+
+.gram-quiz__saved {
+  color: #8fe3a9;
+}
+
+.gram-card__head h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.gram-formula {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px dashed rgba(232, 184, 109, 0.35);
+  border-radius: 12px;
+  background: rgba(11, 18, 32, 0.5);
+}
+
+.gram-formula__part {
+  padding: 0.3rem 0.65rem;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.gram-formula__op {
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.gram-card__explain {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.gram-card__info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.75rem;
+}
+
+.gram-card__info section,
+.gram-film {
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  background: rgba(11, 18, 32, 0.4);
+}
+
+.gram-card h4 {
+  margin: 0 0 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.gram-use {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gram-use li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.93rem;
+}
+
+.gram-use li::before {
+  content: '';
+  position: absolute;
+  left: 0.15rem;
+  top: 0.55em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.gram-markers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.gram-markers span {
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.gram-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.gram-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+
+.gram-table th {
+  padding: 0.55rem 0.85rem;
+  background: rgba(232, 184, 109, 0.1);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.gram-table td {
+  padding: 0.55rem 0.85rem;
+  border-top: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.gram-table tbody tr:hover {
+  background: rgba(232, 238, 248, 0.03);
+}
+
+.gram-table__form {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.gram-film {
+  display: grid;
+  gap: 0.4rem;
+  border-left: 3px solid rgba(232, 184, 109, 0.55);
+}
+
+.gram-film h4 {
+  margin-bottom: 0.1rem;
+}
+
+.gram-film__line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.gram-film__line p {
+  margin: 0;
+  font-style: italic;
+}
+
+.gram-film__line .say {
+  margin-top: 0;
+}
+
+.gram-card__foot {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+  .lex-item {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .lex-item > .say {
+    grid-column: 2;
+  }
+
+  .phrase-item {
+    grid-template-columns: 1fr;
+  }
+
+  .phrase-item__actions {
+    justify-content: flex-start;
+  }
+}

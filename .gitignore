@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Build
+dist/
+build/
+coverage/
+*.log
+npm-debug.log*
+
+# Uploads / local data
+server/uploads/
+ml-module/.cache/
+*.srt
+*.vtt
+!docs/**/*.srt
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Python / local ML caches
+__pycache__/
+.venv/
+venv/
+.whisper-venv/
+.whisper-models/
+*.pyc
+
+# Cursor / local agent
+.cursor/
+AGENTS.md
+
+# Coursework-only notes (not for public portfolio)
+docs/ASSIGNMENT.md
+docs/ROADMAP.md
+docs/SPEC.md
+docs/WHAT-YOU-NEED.md
+docs/WHAT-TO-CONFIGURE.md
+docs/TEST-CHECKLIST.md
+docs/diagrams/*.md
+
+# Misc
+*.tmp
+.turbo/
+docs/diagrams/*.png
+docs/diagrams/*-preview.html
+docs/diagrams/gen-*.mjs

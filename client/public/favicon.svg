@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#121c2f"/>
+  <rect x="6" y="10" width="52" height="44" rx="6" fill="#e8b86d"/>
+  <g fill="#121c2f">
+    <rect x="10" y="14" width="5" height="5" rx="1"/>
+    <rect x="10" y="29.5" width="5" height="5" rx="1"/>
+    <rect x="10" y="45" width="5" height="5" rx="1"/>
+    <rect x="49" y="14" width="5" height="5" rx="1"/>
+    <rect x="49" y="29.5" width="5" height="5" rx="1"/>
+    <rect x="49" y="45" width="5" height="5" rx="1"/>
+    <rect x="19" y="14" width="26" height="36" rx="3"/>
+  </g>
+  <text x="32" y="39.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="17" fill="#e8b86d">FP</text>
+</svg>
